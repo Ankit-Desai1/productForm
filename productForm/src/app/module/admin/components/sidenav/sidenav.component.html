@@ -1,0 +1,37 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <ul>
+            <li class="items"><a routerLink="./productManagement" routerLinkActive="active">Product
+                    Management</a></li>
+            <li class="items"><a routerLink="./productList" routerLinkActive="active">Product List</a>
+            </li>
+        </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-card class="example-card forms" *ngIf="isShow">
+            <mat-card-content class="text-center">
+                <div>
+                    <h2>Change Your Name</h2>
+                    <form [formGroup]="nameForm" (ngSubmit)="update()" novalidate>
+                        <div>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Product Name:</mat-label>
+                                <input type="text" matInput required formControlName="name" placeholder="Product name">
+                                <mat-error *ngIf="name.hasError('required')">
+                                    Name is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="text-center"><button [disabled]="!(nameForm.touched && nameForm.valid)" mat-raised-button>Submit</button></div>
+                    </form>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+
+        <div fxFlex="100">
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

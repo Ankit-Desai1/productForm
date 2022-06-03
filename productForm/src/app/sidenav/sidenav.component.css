@@ -1,0 +1,18 @@
+.items {
+    border: 1px solid;
+    padding: 10px;
+}
+
+.items a {
+    color: black;
+    font-style: normal;
+    text-decoration: none;
+}
+
+li {
+    list-style: none !important;
+}
+
+.items .active {
+    color: blue !important;
+}

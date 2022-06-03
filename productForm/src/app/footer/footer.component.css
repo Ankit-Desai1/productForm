@@ -1,0 +1,24 @@
+.footer {
+    background-color: #111111;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer .footer-menu {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #F1F1F1;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.footer .fb {
+    margin-top: 25px;
+    margin-right: 20px;
+}
+
+.footer .insta {
+    margin-top: 25px;
+    margin-right: 20px;
+}

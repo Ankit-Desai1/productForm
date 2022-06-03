@@ -1,0 +1,15 @@
+.footer {
+    background-color: #111111;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding: 30px;
+}
+
+.footer .footer-menu {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #F1F1F1;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}

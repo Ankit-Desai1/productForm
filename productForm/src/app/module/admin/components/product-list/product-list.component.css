@@ -1,0 +1,33 @@
+.forms {
+    margin-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 300px !important;
+}
+
+.editcard {
+    margin-left: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 300px !important;
+}
+
+.editbutton {
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+@media screen and (max-width: 840px) {
+    .buttons {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 840px) {
+    .icons {
+        display: none;
+    }
+}

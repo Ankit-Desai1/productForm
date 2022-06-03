@@ -1,0 +1,29 @@
+<mat-card class="example-card editcard">
+    <mat-card-content class="text-center">
+        <h2 class="text-center">Login Form</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email:</mat-label>
+                    <input type="email" matInput required formControlName="email" placeholder="email">
+                    <mat-error *ngIf="email.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Password:</mat-label>
+                    <input type="password" matInput required formControlName="password" placeholder="Password">
+                    <mat-error *ngIf="loginForm.controls['password'].invalid">
+                        {{ getErrorMessage() }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <br>
+
+            <div class="text-center"><button [disabled]="loginForm.invalid" mat-raised-button>Submit</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

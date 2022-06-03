@@ -1,0 +1,58 @@
+<div fxLayoutAlign="center center">
+    <mat-card class="example-card forms" *ngIf="showform">
+        <mat-card-content>
+            <form [formGroup]="addForm" novalidate fxLayoutAlign="stretch" fxLayout="column">
+                <div formArrayName="products">
+                    <tr *ngFor="let product of addForm.controls['products']['controls']; let i=index" [formGroupName]="i">
+                        <h2 *ngIf="! isEdit">Product {{i+1}}</h2>
+                        <h2 *ngIf="isEdit">Edit Form</h2>
+                        <div>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Product Name:</mat-label>
+                                <input type="text" matInput required formControlName="name" placeholder="Product name">
+                                <mat-error *ngIf="name.hasError('required')">
+                                    Product name is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Category:</mat-label>
+                                <mat-select formControlName="category" required>
+                                    <mat-option *ngFor="let productCategory of selectProduct" value="{{productCategory}}">{{productCategory}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="category.hasError('required')">
+                                    Category is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Price:</mat-label>
+                                <input type="text" matInput required formControlName="price" placeholder="Price">
+                                <mat-error *ngIf="price.hasError('required')">
+                                    Price is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <mat-label>Description</mat-label>
+                                <textarea matInput placeholder="About product....." required formControlName="description"></textarea>
+                                <mat-error *ngIf="description.hasError('required')">
+                                    Description is <strong>required</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </tr>
+                </div>
+                <div fxLayoutAlign="center" *ngIf="isEdit"><button (click)="update()" type="submit" [disabled]="!(addForm.touched && addForm.valid)" mat-raised-button>Submit</button></div>
+                <div fxLayoutAlign="center" *ngIf="! isEdit"><button (click)="submit()" type="submit" [disabled]="!(addForm.touched && addForm.valid)" mat-raised-button>Submit</button></div>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <div fxLayoutAlign="center" *ngIf="! isEdit"><button (click)="addnewP()" mat-raised-button color="primary">+</button></div>
+        </mat-card-actions>
+    </mat-card>
+</div>
